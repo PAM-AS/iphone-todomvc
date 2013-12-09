@@ -2,7 +2,7 @@
 //  Todo.h
 //  todomvc
 //
-//  Created by Thomas Sunde Nielsen on 05.12.13.
+//  Created by Thomas Sunde Nielsen on 06.12.13.
 //  Copyright (c) 2013 Thomas Sunde Nielsen. All rights reserved.
 //
 
@@ -15,5 +15,6 @@
 @property (nonatomic, retain) NSNumber * completed;
 @property (nonatomic, retain) NSNumber * systemId;
 @property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSNumber * dirty;
 
 @end

@@ -16,9 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="What needs to be done?" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Q7g-4U-xc8">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="What needs to be done?" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Q7g-4U-xc8">
                                 <rect key="frame" x="68" y="20" width="232" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="232" id="Xj3-SX-oVw"/>
+                                </constraints>
                                 <color key="textColor" red="0.23404696580000001" green="0.23403996229999999" blue="0.23404392600000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
@@ -26,9 +29,13 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="zQN-br-MAr"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mbe-KQ-ObZ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mbe-KQ-ObZ">
                                 <rect key="frame" x="3" y="20" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="3tP-41-EKD"/>
+                                    <constraint firstAttribute="height" constant="44" id="HhD-yd-Jvp"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="30"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="-7" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="»">
@@ -39,7 +46,7 @@
                                     <action selector="checkAll:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ADD-z4-aHs"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BER-lY-LDc">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BER-lY-LDc">
                                 <rect key="frame" x="0.0" y="65" width="320" height="459"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -122,27 +129,34 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="KPT-wB-PwJ"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SJa-Rm-Pm0">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SJa-Rm-Pm0">
                                 <rect key="frame" x="0.0" y="64" width="320" height="1"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.80000007149999997" green="0.80000007149999997" blue="0.80000007149999997" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="4Fw-Xn-WCW"/>
+                                    <constraint firstAttribute="width" constant="320" id="7ce-tz-P4a"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8pP-fL-iZS">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8pP-fL-iZS">
                                 <rect key="frame" x="54" y="20" width="1" height="548"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.94117653369999998" green="0.82352948189999997" blue="0.82352948189999997" alpha="1" colorSpace="deviceRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8KY-Kl-yHg">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8KY-Kl-yHg">
                                 <rect key="frame" x="50" y="20" width="1" height="548"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.94117653369903564" green="0.82352948188781738" blue="0.82352948188781738" alpha="1" colorSpace="deviceRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E4d-SS-3aO">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E4d-SS-3aO">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.58039218187332153" green="0.51764708757400513" blue="0.4901961088180542" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="zWq-Xi-cNz"/>
+                                </constraints>
                             </view>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="343-eC-ceE">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="343-eC-ceE">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
@@ -172,6 +186,33 @@
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8KY-Kl-yHg" firstAttribute="leading" secondItem="Mbe-KQ-ObZ" secondAttribute="trailing" constant="3" id="73a-gH-Jui"/>
+                            <constraint firstItem="8KY-Kl-yHg" firstAttribute="top" secondItem="Mbe-KQ-ObZ" secondAttribute="top" id="81d-Gx-wAG"/>
+                            <constraint firstItem="8pP-fL-iZS" firstAttribute="top" secondItem="Q7g-4U-xc8" secondAttribute="top" id="8Nh-kK-U5n"/>
+                            <constraint firstItem="Mbe-KQ-ObZ" firstAttribute="bottom" secondItem="Q7g-4U-xc8" secondAttribute="bottom" id="8tw-SX-9SZ"/>
+                            <constraint firstItem="BER-lY-LDc" firstAttribute="trailing" secondItem="SJa-Rm-Pm0" secondAttribute="trailing" id="EOe-rk-d01"/>
+                            <constraint firstItem="8KY-Kl-yHg" firstAttribute="bottom" secondItem="8pP-fL-iZS" secondAttribute="bottom" id="EZe-aN-FrM"/>
+                            <constraint firstItem="343-eC-ceE" firstAttribute="leading" secondItem="BER-lY-LDc" secondAttribute="leading" id="EbH-gA-PM8"/>
+                            <constraint firstItem="Mbe-KQ-ObZ" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="20" symbolic="YES" id="FKY-AN-LTi"/>
+                            <constraint firstItem="8pP-fL-iZS" firstAttribute="top" secondItem="8KY-Kl-yHg" secondAttribute="top" id="Fif-wW-jYv"/>
+                            <constraint firstAttribute="trailing" secondItem="343-eC-ceE" secondAttribute="trailing" id="IXa-py-dQh"/>
+                            <constraint firstAttribute="trailing" secondItem="Q7g-4U-xc8" secondAttribute="trailing" constant="20" symbolic="YES" id="KfF-9n-tTR"/>
+                            <constraint firstAttribute="bottom" secondItem="8KY-Kl-yHg" secondAttribute="bottom" id="MEY-vS-Bey"/>
+                            <constraint firstItem="E4d-SS-3aO" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="OKK-lc-gXW"/>
+                            <constraint firstItem="BER-lY-LDc" firstAttribute="top" secondItem="SJa-Rm-Pm0" secondAttribute="bottom" id="PeF-l7-Pxs"/>
+                            <constraint firstItem="E4d-SS-3aO" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="RNA-gN-eko"/>
+                            <constraint firstItem="8pP-fL-iZS" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="54" id="SRO-7H-ccV"/>
+                            <constraint firstItem="343-eC-ceE" firstAttribute="top" secondItem="BER-lY-LDc" secondAttribute="bottom" id="VcF-pZ-9Ad"/>
+                            <constraint firstItem="SJa-Rm-Pm0" firstAttribute="top" secondItem="Q7g-4U-xc8" secondAttribute="bottom" id="WdB-he-iZp"/>
+                            <constraint firstItem="8KY-Kl-yHg" firstAttribute="centerY" secondItem="BER-lY-LDc" secondAttribute="centerY" id="Yme-2T-lBX"/>
+                            <constraint firstItem="8pP-fL-iZS" firstAttribute="leading" secondItem="8KY-Kl-yHg" secondAttribute="trailing" constant="3" id="aEr-KK-eli"/>
+                            <constraint firstItem="343-eC-ceE" firstAttribute="bottom" secondItem="8pP-fL-iZS" secondAttribute="bottom" id="bKY-DC-E47"/>
+                            <constraint firstItem="BER-lY-LDc" firstAttribute="trailing" secondItem="343-eC-ceE" secondAttribute="trailing" id="dlc-AJ-8QF"/>
+                            <constraint firstItem="Q7g-4U-xc8" firstAttribute="leading" secondItem="8pP-fL-iZS" secondAttribute="trailing" constant="13" id="kRM-0q-sWO"/>
+                            <constraint firstItem="SJa-Rm-Pm0" firstAttribute="leading" secondItem="BER-lY-LDc" secondAttribute="leading" id="oTs-qh-9Sd"/>
+                            <constraint firstItem="Mbe-KQ-ObZ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="3" id="ulX-pQ-syq"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="bottomToolbar" destination="343-eC-ceE" id="5tE-yK-cHr"/>

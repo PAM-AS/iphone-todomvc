@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "TSNTodoCell.h"
+#import "User.h"
 #import "Todo.h"
+#import "TSNRESTManager.h"
 
-@interface TSNViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, TSNTodoCellDelegate>
+@interface TSNViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, TSNTodoCellDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) NSArray *todos;
 

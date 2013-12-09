@@ -35,8 +35,44 @@ static NSString *CellIdentifier = @"TodoCell";
     // Fixes UISegmentedControl bug
     [self.segmentControl setTintColor:[UIColor clearColor]];
     [self.segmentControl setTintColor:self.view.tintColor];
+    
+    TSNRESTObjectMap *todoMap = [[TSNRESTObjectMap alloc] initWithClass:[Todo class]];
+    [todoMap mapObjectKey:@"title" toWebKey:@"title"];
+    [todoMap mapObjectKey:@"completed" toWebKey:@"is_completed"];
+    [todoMap addBoolean:@"completed"];
+    [todoMap setServerPath:@"todos"];
+    [[TSNRESTManager sharedManager] addObjectMap:todoMap];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(modelUpdated) name:@"modelUpdated" object:nil];
+    
+    if ([User findFirst])
+    {
+        NSLog(@"Current user: %@", [[User findFirst] systemId]);
+        [[TSNRESTManager sharedManager] setGlobalHeader:[NSString stringWithFormat:@"Bearer %@", [[User findFirst] access_token]] forKey:@"Authorization"];
+    }
+    else if (![[NSUserDefaults standardUserDefaults] boolForKey:@"neverUseCloud"])
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enable cloud storage?" message:@"By enabling cloud storage you can access your todos from multiple devices." delegate:self cancelButtonTitle:@"No, not now" otherButtonTitles:@"Yes please", @"No, and never remind me", nil];
+        [alert show];
+    }
 }
 
+#pragma mark - UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1)
+    {
+        UIViewController *loginViewController = [[UIStoryboard storyboardWithName:@"Login" bundle:nil] instantiateInitialViewController];
+        [self presentViewController:loginViewController animated:YES completion:nil];
+    }
+    else if (buttonIndex == 2)
+    {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"neverUseCloud"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+}
+
+#pragma mark - UIViewController overrides
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
@@ -49,6 +85,13 @@ static NSString *CellIdentifier = @"TodoCell";
 }
 
 #pragma mark - Load data
+- (void)modelUpdated
+{
+    [self.taskTableView beginUpdates];
+    [self loadData];
+    [self.taskTableView endUpdates];
+}
+
 - (IBAction)loadData
 {
     [self loadTodos];
@@ -57,31 +100,19 @@ static NSString *CellIdentifier = @"TodoCell";
 
 - (void)loadTodos
 {
-    NSLog(@"Segment: %i", self.segmentControl.selectedSegmentIndex);
-    
     if (self.segmentControl.selectedSegmentIndex == 0)
         self.todos = [Todo findAllSortedBy:@"systemId" ascending:YES];
     else if (self.segmentControl.selectedSegmentIndex == 1)
         self.todos = [Todo findAllSortedBy:@"systemId" ascending:YES withPredicate:[NSPredicate predicateWithFormat:@"completed != 1"]];
     else
         self.todos = [Todo findAllSortedBy:@"systemId" ascending:YES withPredicate:[NSPredicate predicateWithFormat:@"completed = 1"]];
-    [self.leftItem setTitle:[NSString stringWithFormat:@"%i left", [Todo countOfEntitiesWithPredicate:[NSPredicate predicateWithFormat:@"completed != 1"]]]];
+    [self.leftItem setTitle:[NSString stringWithFormat:@"%lu left", (unsigned long)[Todo countOfEntitiesWithPredicate:[NSPredicate predicateWithFormat:@"completed != 1"]]]];
 }
 
 #pragma mark - UITextFieldDelegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
-        Todo *todo = [Todo createInContext:localContext];
-        todo.title = textField.text;
-        todo.completed = @NO;
-    } completion:^(BOOL success, NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            textField.text = @"";
-        });
-        [self loadData];
-    }];
-    
+    [self done:textField];
     return NO;
 }
 
@@ -89,7 +120,20 @@ static NSString *CellIdentifier = @"TodoCell";
 #pragma mark - IBActions
 - (IBAction)done:(id)sender
 {
-    NSLog(@"Done");
+    if (self.createTaskTextField.text.length > 0)
+    {
+        [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+            Todo *todo = [Todo createInContext:localContext];
+            todo.title = self.createTaskTextField.text;
+            todo.completed = @NO;
+            [todo persist];
+        } completion:^(BOOL success, NSError *error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.createTaskTextField.text = @"";
+            });
+            [self loadData];
+        }];
+    }
     [self.createTaskTextField resignFirstResponder];
 }
 
@@ -113,6 +157,7 @@ static NSString *CellIdentifier = @"TodoCell";
             if ([todo.completed boolValue])
             {
                 Todo *deletableTodo = [todo inContext:localContext];
+#warning Delete on server here!
                 [deletableTodo deleteInContext:localContext];
             }
         }
@@ -171,6 +216,7 @@ static NSString *CellIdentifier = @"TodoCell";
         NSIndexPath *indexPath = [self.taskTableView indexPathForCell:cell];
         Todo *todo = [[self.todos objectAtIndex:indexPath.row] inContext:localContext];
         [todo setCompleted:[NSNumber numberWithBool:done]];
+        [todo persist];
     } completion:^(BOOL success, NSError *error) {
         [self loadData];
     }];
@@ -181,6 +227,7 @@ static NSString *CellIdentifier = @"TodoCell";
     NSIndexPath *indexPath = [self.taskTableView indexPathForCell:cell];
     [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
         Todo *todo = [[self.todos objectAtIndex:indexPath.row] inContext:localContext];
+        [todo deleteFromServer];
         [todo deleteInContext:localContext];
     } completion:^(BOOL success, NSError *error) {
         [self.taskTableView beginUpdates];
@@ -196,6 +243,7 @@ static NSString *CellIdentifier = @"TodoCell";
     [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
         Todo *todo = [[self.todos objectAtIndex:indexPath.row] inContext:localContext];
         todo.title = ((TSNTodoCell *)cell).todoLabel.text;
+        [todo persist];
     }];
 }
 

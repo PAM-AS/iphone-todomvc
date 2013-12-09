@@ -81,6 +81,13 @@
         [self.delegate editedTodoForCell:self];
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self doneEditing:textField];
+    [textField resignFirstResponder];
+    return NO;
+}
+
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField
 {
     self.editField.hidden =YES;

@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		9E8B59FE69014316A08C1EB9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A8503EE7E03643568E9B752F /* libPods.a */; };
+		E984D4BF1851CB59004007F9 /* TSNRESTManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E984D4BE1851CB59004007F9 /* TSNRESTManager.m */; };
+		E984D4C81851CCAE004007F9 /* TSNRESTObjectMap.m in Sources */ = {isa = PBXBuildFile; fileRef = E984D4C71851CCAE004007F9 /* TSNRESTObjectMap.m */; };
+		E984D4CC1851D368004007F9 /* NSManagedObject+TSNRESTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E984D4CB1851D368004007F9 /* NSManagedObject+TSNRESTAdditions.m */; };
+		E984D4CF1851FDA7004007F9 /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = E984D4CE1851FDA7004007F9 /* Todo.m */; };
+		E984D4D21855BE3D004007F9 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E984D4D11855BE3D004007F9 /* User.m */; };
+		E984D4D51855BF3B004007F9 /* TSNLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E984D4D41855BF3B004007F9 /* TSNLoginViewController.m */; };
+		E984D4D71855BF58004007F9 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984D4D61855BF58004007F9 /* Login.storyboard */; };
+		E984D4DA1855C696004007F9 /* TSNSignupFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E984D4D91855C696004007F9 /* TSNSignupFormViewController.m */; };
+		E984D4DE1855C9F7004007F9 /* PAMTextValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = E984D4DD1855C9F7004007F9 /* PAMTextValidator.m */; };
+		E984D4E11855FADB004007F9 /* TSNLoginFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E984D4E01855FADB004007F9 /* TSNLoginFormViewController.m */; };
+		E984D4E418560566004007F9 /* TSNRESTLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = E984D4E318560566004007F9 /* TSNRESTLogin.m */; };
 		E9F6BC431850A66A006EDB91 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F6BC421850A66A006EDB91 /* Foundation.framework */; };
 		E9F6BC451850A66A006EDB91 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F6BC441850A66A006EDB91 /* CoreGraphics.framework */; };
 		E9F6BC471850A66A006EDB91 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F6BC461850A66A006EDB91 /* UIKit.framework */; };
@@ -23,7 +34,6 @@
 		E9F6BC6C1850A66A006EDB91 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9F6BC6A1850A66A006EDB91 /* InfoPlist.strings */; };
 		E9F6BC6E1850A66A006EDB91 /* todomvcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F6BC6D1850A66A006EDB91 /* todomvcTests.m */; };
 		E9F6BC7A1850B289006EDB91 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9F6BC781850B289006EDB91 /* Model.xcdatamodeld */; };
-		E9F6BC7D1850B4B2006EDB91 /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F6BC7C1850B4B2006EDB91 /* Todo.m */; };
 		E9F6BC801850B6F5006EDB91 /* TSNTodoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F6BC7F1850B6F5006EDB91 /* TSNTodoCell.m */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +50,27 @@
 /* Begin PBXFileReference section */
 		2BBD5DD10AE4458298A70921 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		A8503EE7E03643568E9B752F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E984D4BD1851CB59004007F9 /* TSNRESTManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSNRESTManager.h; sourceTree = "<group>"; };
+		E984D4BE1851CB59004007F9 /* TSNRESTManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSNRESTManager.m; sourceTree = "<group>"; };
+		E984D4C61851CCAE004007F9 /* TSNRESTObjectMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSNRESTObjectMap.h; sourceTree = "<group>"; };
+		E984D4C71851CCAE004007F9 /* TSNRESTObjectMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSNRESTObjectMap.m; sourceTree = "<group>"; };
+		E984D4CA1851D368004007F9 /* NSManagedObject+TSNRESTAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+TSNRESTAdditions.h"; sourceTree = "<group>"; };
+		E984D4CB1851D368004007F9 /* NSManagedObject+TSNRESTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+TSNRESTAdditions.m"; sourceTree = "<group>"; };
+		E984D4CD1851FDA7004007F9 /* Todo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Todo.h; sourceTree = "<group>"; };
+		E984D4CE1851FDA7004007F9 /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Todo.m; sourceTree = "<group>"; };
+		E984D4D01855BE3D004007F9 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		E984D4D11855BE3D004007F9 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		E984D4D31855BF3B004007F9 /* TSNLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSNLoginViewController.h; sourceTree = "<group>"; };
+		E984D4D41855BF3B004007F9 /* TSNLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSNLoginViewController.m; sourceTree = "<group>"; };
+		E984D4D61855BF58004007F9 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		E984D4D81855C696004007F9 /* TSNSignupFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSNSignupFormViewController.h; sourceTree = "<group>"; };
+		E984D4D91855C696004007F9 /* TSNSignupFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSNSignupFormViewController.m; sourceTree = "<group>"; };
+		E984D4DC1855C9F7004007F9 /* PAMTextValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAMTextValidator.h; sourceTree = "<group>"; };
+		E984D4DD1855C9F7004007F9 /* PAMTextValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAMTextValidator.m; sourceTree = "<group>"; };
+		E984D4DF1855FADB004007F9 /* TSNLoginFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSNLoginFormViewController.h; sourceTree = "<group>"; };
+		E984D4E01855FADB004007F9 /* TSNLoginFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSNLoginFormViewController.m; sourceTree = "<group>"; };
+		E984D4E218560566004007F9 /* TSNRESTLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSNRESTLogin.h; sourceTree = "<group>"; };
+		E984D4E318560566004007F9 /* TSNRESTLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSNRESTLogin.m; sourceTree = "<group>"; };
 		E9F6BC3F1850A66A006EDB91 /* todomvc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todomvc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9F6BC421850A66A006EDB91 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E9F6BC441850A66A006EDB91 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -60,8 +91,6 @@
 		E9F6BC6B1850A66A006EDB91 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E9F6BC6D1850A66A006EDB91 /* todomvcTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = todomvcTests.m; sourceTree = "<group>"; };
 		E9F6BC791850B289006EDB91 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		E9F6BC7B1850B4B2006EDB91 /* Todo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Todo.h; sourceTree = "<group>"; };
-		E9F6BC7C1850B4B2006EDB91 /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Todo.m; sourceTree = "<group>"; };
 		E9F6BC7E1850B6F5006EDB91 /* TSNTodoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSNTodoCell.h; sourceTree = "<group>"; };
 		E9F6BC7F1850B6F5006EDB91 /* TSNTodoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSNTodoCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +120,87 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E984D4C01851CB60004007F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E984D4CD1851FDA7004007F9 /* Todo.h */,
+				E984D4CE1851FDA7004007F9 /* Todo.m */,
+				E9F6BC781850B289006EDB91 /* Model.xcdatamodeld */,
+				E984D4D01855BE3D004007F9 /* User.h */,
+				E984D4D11855BE3D004007F9 /* User.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E984D4C11851CB68004007F9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E984D4DB1855C9DF004007F9 /* PAM */,
+				E984D4C21851CB6D004007F9 /* TSNREST */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E984D4C21851CB6D004007F9 /* TSNREST */ = {
+			isa = PBXGroup;
+			children = (
+				E984D4BD1851CB59004007F9 /* TSNRESTManager.h */,
+				E984D4BE1851CB59004007F9 /* TSNRESTManager.m */,
+				E984D4C61851CCAE004007F9 /* TSNRESTObjectMap.h */,
+				E984D4C71851CCAE004007F9 /* TSNRESTObjectMap.m */,
+				E984D4CA1851D368004007F9 /* NSManagedObject+TSNRESTAdditions.h */,
+				E984D4CB1851D368004007F9 /* NSManagedObject+TSNRESTAdditions.m */,
+				E984D4E218560566004007F9 /* TSNRESTLogin.h */,
+				E984D4E318560566004007F9 /* TSNRESTLogin.m */,
+			);
+			name = TSNREST;
+			sourceTree = "<group>";
+		};
+		E984D4C31851CB79004007F9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E9F6BC571850A66A006EDB91 /* TSNViewController.h */,
+				E9F6BC581850A66A006EDB91 /* TSNViewController.m */,
+				E984D4D31855BF3B004007F9 /* TSNLoginViewController.h */,
+				E984D4D41855BF3B004007F9 /* TSNLoginViewController.m */,
+				E984D4D81855C696004007F9 /* TSNSignupFormViewController.h */,
+				E984D4D91855C696004007F9 /* TSNSignupFormViewController.m */,
+				E984D4DF1855FADB004007F9 /* TSNLoginFormViewController.h */,
+				E984D4E01855FADB004007F9 /* TSNLoginFormViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		E984D4C41851CB87004007F9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E9F6BC541850A66A006EDB91 /* Main.storyboard */,
+				E9F6BC5A1850A66A006EDB91 /* Images.xcassets */,
+				E9F6BC7E1850B6F5006EDB91 /* TSNTodoCell.h */,
+				E9F6BC7F1850B6F5006EDB91 /* TSNTodoCell.m */,
+				E984D4D61855BF58004007F9 /* Login.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		E984D4C51851CBA8004007F9 /* Lifecycle */ = {
+			isa = PBXGroup;
+			children = (
+				E9F6BC511850A66A006EDB91 /* TSNAppDelegate.h */,
+				E9F6BC521850A66A006EDB91 /* TSNAppDelegate.m */,
+			);
+			name = Lifecycle;
+			sourceTree = "<group>";
+		};
+		E984D4DB1855C9DF004007F9 /* PAM */ = {
+			isa = PBXGroup;
+			children = (
+				E984D4DC1855C9F7004007F9 /* PAMTextValidator.h */,
+				E984D4DD1855C9F7004007F9 /* PAMTextValidator.m */,
+			);
+			name = PAM;
+			sourceTree = "<group>";
+		};
 		E9F6BC361850A66A006EDB91 = {
 			isa = PBXGroup;
 			children = (
@@ -126,18 +236,12 @@
 		E9F6BC481850A66A006EDB91 /* todomvc */ = {
 			isa = PBXGroup;
 			children = (
-				E9F6BC781850B289006EDB91 /* Model.xcdatamodeld */,
-				E9F6BC7B1850B4B2006EDB91 /* Todo.h */,
-				E9F6BC7C1850B4B2006EDB91 /* Todo.m */,
-				E9F6BC511850A66A006EDB91 /* TSNAppDelegate.h */,
-				E9F6BC521850A66A006EDB91 /* TSNAppDelegate.m */,
-				E9F6BC541850A66A006EDB91 /* Main.storyboard */,
-				E9F6BC571850A66A006EDB91 /* TSNViewController.h */,
-				E9F6BC581850A66A006EDB91 /* TSNViewController.m */,
-				E9F6BC5A1850A66A006EDB91 /* Images.xcassets */,
+				E984D4C51851CBA8004007F9 /* Lifecycle */,
+				E984D4C11851CB68004007F9 /* Frameworks */,
+				E984D4C01851CB60004007F9 /* Model */,
+				E984D4C31851CB79004007F9 /* Controller */,
+				E984D4C41851CB87004007F9 /* View */,
 				E9F6BC491850A66A006EDB91 /* Supporting Files */,
-				E9F6BC7E1850B6F5006EDB91 /* TSNTodoCell.h */,
-				E9F6BC7F1850B6F5006EDB91 /* TSNTodoCell.m */,
 			);
 			path = todomvc;
 			sourceTree = "<group>";
@@ -221,6 +325,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Thomas Sunde Nielsen";
 				TargetAttributes = {
+					E9F6BC3E1850A66A006EDB91 = {
+						DevelopmentTeam = 5AS28F694L;
+					};
 					E9F6BC5F1850A66A006EDB91 = {
 						TestTargetID = E9F6BC3E1850A66A006EDB91;
 					};
@@ -250,6 +357,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E984D4D71855BF58004007F9 /* Login.storyboard in Resources */,
 				E9F6BC5B1850A66A006EDB91 /* Images.xcassets in Resources */,
 				E9F6BC4D1850A66A006EDB91 /* InfoPlist.strings in Resources */,
 				E9F6BC561850A66A006EDB91 /* Main.storyboard in Resources */,
@@ -304,12 +412,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9F6BC7D1850B4B2006EDB91 /* Todo.m in Sources */,
+				E984D4D21855BE3D004007F9 /* User.m in Sources */,
+				E984D4CC1851D368004007F9 /* NSManagedObject+TSNRESTAdditions.m in Sources */,
+				E984D4DA1855C696004007F9 /* TSNSignupFormViewController.m in Sources */,
 				E9F6BC591850A66A006EDB91 /* TSNViewController.m in Sources */,
+				E984D4D51855BF3B004007F9 /* TSNLoginViewController.m in Sources */,
+				E984D4DE1855C9F7004007F9 /* PAMTextValidator.m in Sources */,
 				E9F6BC531850A66A006EDB91 /* TSNAppDelegate.m in Sources */,
 				E9F6BC4F1850A66A006EDB91 /* main.m in Sources */,
 				E9F6BC7A1850B289006EDB91 /* Model.xcdatamodeld in Sources */,
+				E984D4C81851CCAE004007F9 /* TSNRESTObjectMap.m in Sources */,
+				E984D4E418560566004007F9 /* TSNRESTLogin.m in Sources */,
 				E9F6BC801850B6F5006EDB91 /* TSNTodoCell.m in Sources */,
+				E984D4CF1851FDA7004007F9 /* Todo.m in Sources */,
+				E984D4E11855FADB004007F9 /* TSNLoginFormViewController.m in Sources */,
+				E984D4BF1851CB59004007F9 /* TSNRESTManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,10 +554,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "todomvc/todomvc-Prefix.pch";
 				INFOPLIST_FILE = "todomvc/todomvc-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -451,10 +571,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "todomvc/todomvc-Prefix.pch";
 				INFOPLIST_FILE = "todomvc/todomvc-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

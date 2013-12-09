@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TSNRESTManager.h"
 
 @interface TSNAppDelegate : UIResponder <UIApplicationDelegate>
 

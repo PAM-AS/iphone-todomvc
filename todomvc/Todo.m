@@ -2,7 +2,7 @@
 //  Todo.m
 //  todomvc
 //
-//  Created by Thomas Sunde Nielsen on 05.12.13.
+//  Created by Thomas Sunde Nielsen on 06.12.13.
 //  Copyright (c) 2013 Thomas Sunde Nielsen. All rights reserved.
 //
 
@@ -14,5 +14,6 @@
 @dynamic completed;
 @dynamic systemId;
 @dynamic title;
+@dynamic dirty;
 
 @end

@@ -14,6 +14,8 @@
 {
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"Model.sqlite"];
     
+    [[TSNRESTManager sharedManager] setBaseURL:@"http://localhost:3000/api/v1/"];
+    
     return YES;
 }
 							
