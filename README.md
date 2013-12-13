@@ -12,4 +12,4 @@ gem install cocoapods
 pod install
 ```
 
-Open ```todomvc.xcworkspace``` to open the project.
+Open `todomvc.xcworkspace` to open the project.
