@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FacebookSDK/FacebookSDK.h>
 #import "TSNRESTManager.h"
 #import "User.h"
 
-@interface TSNLoginViewController : UIViewController
+@interface TSNLoginViewController : UIViewController <FBLoginViewDelegate>
 
-- (IBAction)facebookLogin:(id)sender;
+@property (nonatomic, strong) IBOutlet FBLoginView *fbLoginView;
+@property (nonatomic, strong) IBOutlet UIView *loadingView;
+@property (nonatomic, strong) IBOutlet UIActivityIndicatorView *loadingIndicator;
+
 - (IBAction)cancel:(id)sender;
 
 @end

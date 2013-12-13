@@ -43,7 +43,7 @@
             if ([user respondsToSelector:NSSelectorFromString(@"persist")])
             {
                 // Equal to [user performSelector:NSSelectorFromString(@"persist") withObject:nil];
-                // But without the warning.
+                // But without the warning (ARC doesn't think it's safe otherwise).
                 // http://stackoverflow.com/questions/7017281/performselector-may-cause-a-leak-because-its-selector-is-unknown
                 SEL selector = NSSelectorFromString(@"persist");
                 IMP imp = [user methodForSelector:selector];
@@ -53,6 +53,11 @@
         }
     }];
     [dataTask resume];
+}
+
++ (void)loginWithFacebookId:(NSString *)fbId accessToken:(NSString *)accessToken userClass:(Class)userClass url:(NSString *)url
+{
+    
 }
 
 @end

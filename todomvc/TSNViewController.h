@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FacebookSDK/FacebookSDK.h>
 #import "TSNTodoCell.h"
 #import "User.h"
 #import "Todo.h"

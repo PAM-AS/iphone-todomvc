@@ -16,18 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DoO-Hh-slP">
-                                <rect key="frame" x="20" y="210" width="280" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.22745099663734436" green="0.35686275362968445" blue="0.57647061347961426" alpha="1" colorSpace="deviceRGB"/>
-                                <state key="normal" title="Facebook">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="facebookLogin:" destination="Fdf-oQ-kwH" eventType="touchUpInside" id="Cab-KV-n1F"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gz-Dg-Xhz">
                                 <rect key="frame" x="20" y="262" width="280" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -52,16 +40,35 @@
                                     <segue destination="ozx-K6-EnJ" kind="push" id="R79-eg-isT"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cA2-Cl-OLz" customClass="FBLoginView">
+                                <rect key="frame" x="20" y="210" width="280" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.22745099660000001" green="0.35686275360000003" blue="0.57647061349999995" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Fdf-oQ-kwH" id="Q4g-Mb-YfE"/>
+                                </connections>
+                            </view>
+                            <view hidden="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p6X-Bd-n9e">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="cQp-Eq-SK0">
+                                        <rect key="frame" x="142" y="265" width="37" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="color" cocoaTouchSystemColor="darkTextColor"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Login to todo" id="5LZ-RM-j13">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="NW3-mp-yUa">
-                            <connections>
-                                <action selector="cancel:" destination="Fdf-oQ-kwH" id="yIe-vO-6ws"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Login to todo" id="5LZ-RM-j13"/>
+                    <connections>
+                        <outlet property="fbLoginView" destination="cA2-Cl-OLz" id="LEV-UB-Puk"/>
+                        <outlet property="loadingIndicator" destination="cQp-Eq-SK0" id="gY7-7N-UeH"/>
+                        <outlet property="loadingView" destination="p6X-Bd-n9e" id="uED-Km-K3k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b18-vT-HLe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

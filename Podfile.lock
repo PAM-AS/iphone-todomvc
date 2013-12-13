@@ -1,10 +1,13 @@
 PODS:
+  - Facebook-iOS-SDK (3.10.0)
   - MagicalRecord (2.2)
 
 DEPENDENCIES:
+  - Facebook-iOS-SDK
   - MagicalRecord
 
 SPEC CHECKSUMS:
+  Facebook-iOS-SDK: ef402579aeb30cf0c4a6370fb0a927e3dc3059e5
   MagicalRecord: b1fc46c99a9749fe7fe7e6f43a89b62ef5201933
 
 COCOAPODS: 0.28.0

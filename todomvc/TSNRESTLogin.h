@@ -12,5 +12,6 @@
 @interface TSNRESTLogin : NSObject
 
 + (void)loginWithUser:(NSString *)user password:(NSString *)password userClass:(Class)userClass url:(NSString *)url;
++ (void)loginWithFacebookId:(NSString *)fbId accessToken:(NSString *)accessToken userClass:(Class)userClass url:(NSString *)url;
 
 @end

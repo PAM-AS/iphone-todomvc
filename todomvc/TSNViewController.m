@@ -20,6 +20,8 @@ static NSString *CellIdentifier = @"TodoCell";
 {
     [super viewDidLoad];
 
+    [FBSession openActiveSessionWithAllowLoginUI:NO];
+    
     CGAffineTransform transform = CGAffineTransformMakeRotation(M_PI_2);
     self.clearAllButton.transform = transform;
     
@@ -44,31 +46,19 @@ static NSString *CellIdentifier = @"TodoCell";
     [[TSNRESTManager sharedManager] addObjectMap:todoMap];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(modelUpdated) name:@"modelUpdated" object:nil];
-    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
     if ([User findFirst])
     {
         NSLog(@"Current user: %@", [[User findFirst] systemId]);
         [[TSNRESTManager sharedManager] setGlobalHeader:[NSString stringWithFormat:@"Bearer %@", [[User findFirst] access_token]] forKey:@"Authorization"];
     }
-    else if (![[NSUserDefaults standardUserDefaults] boolForKey:@"neverUseCloud"])
-    {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enable cloud storage?" message:@"By enabling cloud storage you can access your todos from multiple devices." delegate:self cancelButtonTitle:@"No, not now" otherButtonTitles:@"Yes please", @"No, and never remind me", nil];
-        [alert show];
-    }
-}
-
-#pragma mark - UIAlertViewDelegate
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == 1)
+    else if (![[FBSession activeSession] isOpen])
     {
         UIViewController *loginViewController = [[UIStoryboard storyboardWithName:@"Login" bundle:nil] instantiateInitialViewController];
-        [self presentViewController:loginViewController animated:YES completion:nil];
-    }
-    else if (buttonIndex == 2)
-    {
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"neverUseCloud"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self presentViewController:loginViewController animated:NO completion:nil];
     }
 }
 
